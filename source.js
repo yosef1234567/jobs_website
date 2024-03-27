@@ -69,7 +69,7 @@ function buildCards(jobList = jobs) {
         isJobSaved = savedJobsID.includes(job.id);
         board.innerHTML += `
         <div class="col">
-        <div class="card" style="width: 25rem; background-color: blue-sky">
+        <div class="card" style="height: 100%; width: 25rem; background-color: blue-sky">
             <div class="card-header" style="text-align: center">
                 Company: <span style="font-weight: bold">${job.company_name}</span>
             </div>
