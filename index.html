@@ -18,7 +18,7 @@
 <body>
     </nav>
     <header class="fixed-top navbar navbar-expand-lg navbar-dark bg-primary">
-        <button ype="button" class="btn btn-primary btn-lg">Full-stack</button>
+        <button type="button" class="btn btn-primary btn-lg">Full-stack</button>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,11 +41,11 @@
                 <button type="button" class="btn btn-primary btn-lg text-start" onclick="showLocalStorage()"
                     data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">Saved jobs ❤</button>
             </div>
-            <form class="form-inline my-2 my-lg-0 px-3" style="display: flex; gap: 2%;">
+            <form id="searchForm" class="form-inline my-2 my-lg-0 px-3" style="display: flex; gap: 2%;">
                 <input id="searchInput" class="form-control mr-sm-2 btn-lg" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-success my-2 my-sm-0 btn-lg" onclick="return showSearch()">Search</button>
+                <button id="searchButton" type="submit" class="btn btn-success my-2 my-sm-0 btn-lg" onsubmit="return showSearch()">Search</button>
             </form>
-            <button id="currentResults" class="btn btn-primary btn-lg my-2 my-sm-0" type="submit">Search</button>
+            <button id="currentResults" class="btn btn-primary btn-lg my-2 my-sm-0 ml-auto" type="submit"></button>
         </div>
     </header>
     <div class="container-xl" style="position: relative; margin-top: 10%;">

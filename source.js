@@ -7,6 +7,7 @@ const board = document.querySelector('#board');
 const dropdown = document.querySelector('#dropdown');
 const spinner = document.querySelector('#spinner');
 const searchInput = document.querySelector('#searchInput');
+const searchForm = document.querySelector('#searchForm')
 const currentResults = document.querySelector('#currentResults');
 
 let jobs;
@@ -57,7 +58,8 @@ function buildCards(jobList = jobs) {
     // Builds a card for each job,
     // Determine the state of the button whther to remove if in localStorage or save if not.
     scrollTo(0, 0);
-    currentResults.textContent = `${jobList.length} results from ${currentFilter}`
+    currentResults.textContent = `Showing  ${jobList.length}  results  from  ${currentFilter}`
+    currentResults.style.backgroundColor = 'green';
     spinner.style.display = 'none';
     savedJobsID = JSON.parse(localStorage.getItem('savedJobs')) || [];
     board.innerHTML = '';
@@ -156,6 +158,11 @@ async function showAllJobs(limit=resultsLimit) {
     ShowingLocalStorage = false;
 }
 
+searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    showSearch();
+})
+
 async function showSearch(limit=resultsLimit) {
     const search = searchInput.value;
     currentFilter = `search ${search}`;
@@ -164,7 +171,8 @@ async function showSearch(limit=resultsLimit) {
     let endpoint = `?search=${search}`;
     limit ? endpoint += `&limit=${limit}`: endpoint;
     let jobsSearch = await getData(setEndpoint(endpoint));
-    buildCards(jobsSearch);
+    console.log(jobsSearch);
+    buildCards(jobsSearch.jobs);
     ShowingLocalStorage = false;
 }
 
