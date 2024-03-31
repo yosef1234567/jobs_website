@@ -58,8 +58,11 @@ function buildCards(jobList = jobs) {
     // Builds a card for each job,
     // Determine the state of the button whther to remove if in localStorage or save if not.
     scrollTo(0, 0);
-    currentResults.textContent = `Showing  ${jobList.length}  results  from  ${currentFilter}`
-    currentResults.style.backgroundColor = 'green';
+    currentResults.innerHTML = `Showing  <span style="color: red">${jobList.length}<span/> <span style="color: black">results  from  <span style="color: red">${currentFilter}<span/>`
+    currentResults.style.fontSize = "40px"
+    currentResults.style.color = 'black'
+    currentResults.style.backgroundColor = 'white'
+    currentResults.style.display = 'block';
     spinner.style.display = 'none';
     savedJobsID = JSON.parse(localStorage.getItem('savedJobs')) || [];
     board.innerHTML = '';
@@ -191,6 +194,7 @@ async function getCountries() {
 }
 
 function showHome() {
+    currentResults.style.display = 'none';
     board.innerHTML = `<h1>Welcome to our jobs search service</h1>
     <h2>All you need for using our search is a good heart and a little bit mind...</h2>`
 }

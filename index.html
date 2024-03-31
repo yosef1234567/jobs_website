@@ -16,7 +16,6 @@
 </head>
 
 <body>
-    </nav>
     <header class="fixed-top navbar navbar-expand-lg navbar-dark bg-primary">
         <button type="button" class="btn btn-primary btn-lg">Full-stack</button>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -25,32 +24,37 @@
         </button>
         <!-- Navbar content -->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <button type="button" class="btn btn-primary btn-lg text-start" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" onclick="showHome()">Home</button>
-                <button type="button" class="btn btn-primary btn-lg text-start" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" onclick="showAllJobs()">All jobs</button>
-                <!-- Example single danger button -->
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle btn-lg text-start"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categories
-                    </button>
-                    <div class="dropdown-menu" id="dropdown"></div>
-                </div>
-                <button type="button" class="btn btn-primary btn-lg text-start" onclick="showLocalStorage()"
-                    data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">Saved jobs ❤</button>
+            <!-- <div class="d-flex bd-highlight mb-3 navbar-nav"> -->
+            <button type="button" class="btn btn-primary btn-lg text-start" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" onclick="showHome()">Home</button>
+            <button type="button" class="btn btn-primary btn-lg text-start" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" onclick="showAllJobs()">All jobs</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle btn-lg text-start"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </button>
+                <div class="dropdown-menu" id="dropdown"></div>
             </div>
-            <form id="searchForm" class="form-inline my-2 my-lg-0 px-3" style="display: flex; gap: 2%;">
-                <input id="searchInput" class="form-control mr-sm-2 btn-lg" type="search" placeholder="Search" aria-label="Search">
-                <button id="searchButton" type="submit" class="btn btn-success my-2 my-sm-0 btn-lg" onsubmit="return showSearch()">Search</button>
+            <button type="button" class="btn btn-primary btn-lg text-start" onclick="showLocalStorage()"
+                data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">Saved jobs ❤</button>
+            <form id="searchForm" class="ms-auto p-2 bd-highlight form-inline my-2 my-lg-0 px-3"
+                style="display: flex; gap: 2%;">
+                <input id="searchInput" class="form-control mr-sm-2 btn-lg" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button id="searchButton" type="submit" class="btn btn-success my-2 my-sm-0 btn-lg"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    onsubmit="return showSearch()">Search</button>
             </form>
-            <button id="currentResults" class="btn btn-primary btn-lg my-2 my-sm-0 ml-auto" type="submit"></button>
+            <!-- </div> -->
         </div>
     </header>
     <div class="container-xl" style="position: relative; margin-top: 10%;">
         <main>
             <div class="container-fluid">
+                <div class="d-flex justify-content-center mb-10rem" style="margin-bottom: 7%">
+                    <button id="currentResults" class="btn btn-warning  ml-auto" type="submit"></button>
+                </div>
                 <!-- //Loading -->
                 <div id="spinner" style="text-align: center; padding: 2%;">
                     <div class="spinner-border text-center" role="status"></div>
