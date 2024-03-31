@@ -2,6 +2,8 @@ Job Search Web App README
 
 My very first js project.
 
+start point: index.html
+
 Demonstrates a variaty of fundamentals in html-css-JavaScript, including api and async, bootstrap utilities for styling, and localStorage, 
 as well as basic programming fundamentals non-specific to js.
 The program runs a webpage that shows available jobs in an interactive and user-friendly manner, using the remotive api for up-to-date jobs,
