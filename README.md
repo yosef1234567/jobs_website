@@ -2,7 +2,7 @@ Job Search Web App README
 
 My very first js project.
 
-start point: index.html
+__Start point: index.html__
 
 Demonstrates a variaty of fundamentals in html-css-JavaScript, including api and async, bootstrap utilities for styling, and localStorage, 
 as well as basic programming fundamentals non-specific to js.
